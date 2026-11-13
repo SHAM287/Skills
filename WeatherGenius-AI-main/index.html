@@ -19,6 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="enhancements.css" />
 </head>
 
 <body>
@@ -63,7 +64,6 @@
                     Current
                 </button>
 
-                <!-- Social buttons -->
                 <a class="social-btn instagram" href="https://www.instagram.com/sham.chavan.00/?__pwa=1" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                     <i class="fa-brands fa-instagram"></i>
                     <span>Instagram</span>
@@ -74,7 +74,6 @@
                     <span>LinkedIn</span>
                 </a>
             </div>
-
 
             <div class="chips-row">
                 <div id="recent-cities" class="city-chip-wrap"></div>
@@ -125,15 +124,8 @@
                         </p>
 
                         <div class="sun-times-inline">
-                            <p>
-                                <i class="fa-regular fa-sun"></i>
-                                <span id="sunrise">--:--</span>
-                            </p>
-
-                            <p>
-                                <i class="fa-solid fa-moon"></i>
-                                <span id="sunset">--:--</span>
-                            </p>
+                            <p><i class="fa-regular fa-sun"></i><span id="sunrise">--:--</span></p>
+                            <p><i class="fa-solid fa-moon"></i><span id="sunset">--:--</span></p>
                         </div>
                     </div>
 
@@ -144,191 +136,66 @@
                 </div>
 
                 <div class="split-metrics">
-                    <div class="metric-item">
-                        <i class="fa-solid fa-droplet modern-icon"></i>
-                        <p id="humidity">--%</p>
-                        <span>Humidity</span>
-                    </div>
-
-                    <div class="metric-item">
-                        <i class="fa-solid fa-wind modern-icon"></i>
-                        <p id="wind-speed">-- km/h</p>
-                        <span>Wind Speed</span>
-                    </div>
-
-                    <div class="metric-item">
-                        <i class="fa-solid fa-gauge-high modern-icon"></i>
-                        <p id="pressure">-- hPa</p>
-                        <span>Pressure</span>
-                    </div>
-
-                    <div class="metric-item">
-                        <i class="fa-solid fa-eye modern-icon"></i>
-                        <p id="visibility">-- km</p>
-                        <span>Visibility</span>
-                    </div>
+                    <div class="metric-item"><i class="fa-solid fa-droplet modern-icon"></i><p id="humidity">--%</p><span>Humidity</span></div>
+                    <div class="metric-item"><i class="fa-solid fa-wind modern-icon"></i><p id="wind-speed">-- km/h</p><span>Wind Speed</span></div>
+                    <div class="metric-item"><i class="fa-solid fa-gauge-high modern-icon"></i><p id="pressure">-- hPa</p><span>Pressure</span></div>
+                    <div class="metric-item"><i class="fa-solid fa-eye modern-icon"></i><p id="visibility">-- km</p><span>Visibility</span></div>
                 </div>
             </section>
 
             <section class="card ai-card">
-                <div class="section-head">
-                    <h3>
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        AI Weather Coach
-                    </h3>
-                </div>
-
+                <div class="section-head"><h3><i class="fa-solid fa-wand-magic-sparkles"></i> AI Weather Coach</h3></div>
                 <p id="ai-summary">Search a city to get smart suggestions.</p>
                 <div id="ai-tags" class="ai-tags"></div>
             </section>
 
             <section class="card aqi-card">
-                <div class="section-head">
-                    <h3>
-                        <i class="fa-solid fa-mask-face"></i>
-                        Air Quality
-                    </h3>
-
-                    <span id="aqi-badge">--</span>
-                </div>
-
-                <div class="aqi-meter">
-                    <div id="aqi-fill"></div>
-                </div>
-
+                <div class="section-head"><h3><i class="fa-solid fa-mask-face"></i> Air Quality</h3><span id="aqi-badge">--</span></div>
+                <div class="aqi-meter"><div id="aqi-fill"></div></div>
                 <p id="aqi-text">AQI details will appear here.</p>
-
                 <div class="pollutant-grid">
-                    <div>
-                        <strong id="pm25">--</strong>
-                        <span>PM2.5</span>
-                    </div>
-
-                    <div>
-                        <strong id="pm10">--</strong>
-                        <span>PM10</span>
-                    </div>
-
-                    <div>
-                        <strong id="co">--</strong>
-                        <span>CO</span>
-                    </div>
-
-                    <div>
-                        <strong id="no2">--</strong>
-                        <span>NO₂</span>
-                    </div>
+                    <div><strong id="pm25">--</strong><span>PM2.5</span></div>
+                    <div><strong id="pm10">--</strong><span>PM10</span></div>
+                    <div><strong id="co">--</strong><span>CO</span></div>
+                    <div><strong id="no2">--</strong><span>NO₂</span></div>
                 </div>
             </section>
 
-            <section class="card forecast-card">
-                <h3>7 Days Forecast</h3>
-                <div id="seven-day-container" class="forecast-list"></div>
-            </section>
+            <section class="card forecast-card"><h3>7 Days Forecast</h3><div id="seven-day-container" class="forecast-list"></div></section>
 
             <section class="card hourly-card">
                 <h3>Hourly Forecast</h3>
-
                 <div id="hourly-container" class="hourly-list"></div>
-
                 <div class="sun-tracker-container">
                     <svg viewBox="0 0 800 320" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
-                        <line x1="20" y1="180" x2="780" y2="180" stroke-dasharray="6,6" stroke-width="1.5"
-                            class="svg-line" />
-
+                        <line x1="20" y1="180" x2="780" y2="180" stroke-dasharray="6,6" stroke-width="1.5" class="svg-line" />
                         <path d="M 50,180 Q 225,30 400,180 T 750,180" fill="none" stroke-width="2" class="svg-line" />
-
-                        <g class="dynamic-fill" id="svg-fill">
-                            <path d="M 50,180 Q 225,30 400,180 Z" fill="rgba(245, 158, 11, 0.85)" />
-
-                            <path d="M 400,180 Q 575,330 750,180 Z" fill="rgba(106, 130, 199, 0.5)" />
-                        </g>
-
+                        <g class="dynamic-fill" id="svg-fill"><path d="M 50,180 Q 225,30 400,180 Z" fill="rgba(245, 158, 11, 0.85)" /><path d="M 400,180 Q 575,330 750,180 Z" fill="rgba(106, 130, 199, 0.5)" /></g>
                         <g class="sun-icon-svg" id="svg-sun"></g>
-
-                        <circle cx="50" cy="180" r="4" class="svg-dot" />
-                        <circle cx="400" cy="180" r="4" class="svg-dot" />
-                        <circle cx="750" cy="180" r="4" class="svg-dot" />
-
-                        <circle cx="225" cy="105" r="3" class="svg-dot-small" />
-                        <circle cx="575" cy="255" r="3" class="svg-dot-small" />
-
-                        <text x="50" y="210" text-anchor="middle" class="svg-text-title" id="svg-label-left-text">
-                            SUNRISE
-                        </text>
-
-                        <text x="50" y="230" text-anchor="middle" class="svg-text-time" id="svg-label-left-time">
-                            --:--
-                        </text>
-
-                        <text x="225" y="85" text-anchor="middle" class="svg-text-title">
-                            NOON
-                        </text>
-
-                        <text x="225" y="65" text-anchor="middle" class="svg-text-time" id="svg-label-noon-time">
-                            --:--
-                        </text>
-
-                        <text x="400" y="210" text-anchor="middle" class="svg-text-title" id="svg-label-mid-text">
-                            SUNSET
-                        </text>
-
-                        <text x="400" y="230" text-anchor="middle" class="svg-text-time" id="svg-label-mid-time">
-                            --:--
-                        </text>
-
-                        <text x="575" y="285" text-anchor="middle" class="svg-text-title">
-                            MIDNIGHT
-                        </text>
-
-                        <text x="575" y="305" text-anchor="middle" class="svg-text-time" id="svg-label-midnight-time">
-                            --:--
-                        </text>
-
-                        <text x="750" y="145" text-anchor="middle" class="svg-text-title" id="svg-label-right-text">
-                            SUNRISE
-                        </text>
-
-                        <text x="750" y="165" text-anchor="middle" class="svg-text-time" id="svg-label-right-time">
-                            --:--
-                        </text>
+                        <circle cx="50" cy="180" r="4" class="svg-dot" /><circle cx="400" cy="180" r="4" class="svg-dot" /><circle cx="750" cy="180" r="4" class="svg-dot" />
+                        <circle cx="225" cy="105" r="3" class="svg-dot-small" /><circle cx="575" cy="255" r="3" class="svg-dot-small" />
+                        <text x="50" y="210" text-anchor="middle" class="svg-text-title" id="svg-label-left-text">SUNRISE</text>
+                        <text x="50" y="230" text-anchor="middle" class="svg-text-time" id="svg-label-left-time">--:--</text>
+                        <text x="225" y="85" text-anchor="middle" class="svg-text-title">NOON</text>
+                        <text x="225" y="65" text-anchor="middle" class="svg-text-time" id="svg-label-noon-time">--:--</text>
+                        <text x="400" y="210" text-anchor="middle" class="svg-text-title" id="svg-label-mid-text">SUNSET</text>
+                        <text x="400" y="230" text-anchor="middle" class="svg-text-time" id="svg-label-mid-time">--:--</text>
+                        <text x="575" y="285" text-anchor="middle" class="svg-text-title">MIDNIGHT</text>
+                        <text x="575" y="305" text-anchor="middle" class="svg-text-time" id="svg-label-midnight-time">--:--</text>
+                        <text x="750" y="145" text-anchor="middle" class="svg-text-title" id="svg-label-right-text">SUNRISE</text>
+                        <text x="750" y="165" text-anchor="middle" class="svg-text-time" id="svg-label-right-time">--:--</text>
                     </svg>
                 </div>
             </section>
 
-            <section class="card chart-card humidity-chart-card">
-                <div class="section-head">
-                    <h3>
-                        <i class="fa-solid fa-water"></i>
-                        Humidity Trend
-                    </h3>
-
-                    <span>Next 24 hours</span>
-                </div>
-
-                <div class="chart-box">
-                    <canvas id="humidityChart"></canvas>
-                </div>
-            </section>
-
-            <section class="card chart-card temp-chart-card">
-                <div class="section-head">
-                    <h3>
-                        <i class="fa-solid fa-chart-line"></i>
-                        Temperature Trend
-                    </h3>
-
-                    <span>Next 24 hours</span>
-                </div>
-
-                <div class="chart-box">
-                    <canvas id="tempChart"></canvas>
-                </div>
-            </section>
+            <section class="card chart-card humidity-chart-card"><div class="section-head"><h3><i class="fa-solid fa-water"></i> Humidity Trend</h3><span>Next 24 hours</span></div><div class="chart-box"><canvas id="humidityChart"></canvas></div></section>
+            <section class="card chart-card temp-chart-card"><div class="section-head"><h3><i class="fa-solid fa-chart-line"></i> Temperature Trend</h3><span>Next 24 hours</span></div><div class="chart-box"><canvas id="tempChart"></canvas></div></section>
         </main>
+        <p id="share-status" class="share-status" role="status" aria-live="polite"></p>
     </div>
 
     <script src="script.js"></script>
+    <script src="enhancements.js"></script>
 </body>
 
 </html>
