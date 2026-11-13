@@ -1,0 +1,53 @@
+/* Share-weather enhancement */
+.share-weather-btn {
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+
+.share-weather-btn:focus-visible {
+  outline: 3px solid #0f172a;
+  outline-offset: 3px;
+}
+
+.share-status {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 100;
+  max-width: min(90vw, 440px);
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: #102033;
+  color: #fff;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.24);
+  font-size: 14px;
+  text-align: center;
+  transform: translate(-50%, 20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.share-status:not(:empty) {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+@media (max-width: 700px) {
+  .share-weather-btn {
+    order: 2;
+    flex: 1;
+  }
+
+  .share-status {
+    bottom: 14px;
+    border-radius: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .share-status {
+    transition: none;
+  }
+}
